@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 import ImportFile from './import';
@@ -15,13 +15,13 @@ root.render(
     <BrowserRouter>
     <ContextProvider>
       <Routes>
-        <Route path='/' element={<SignIn/>} />
+        <Route path='/' element={ <SignIn/> } />
         <Route path='/register' element={<Signup/>}/>
         <Route path='/contacts' element={<Header/>}/>
+        <Route path='/import' element={<ImportFile/>}/>
     </Routes>
     </ContextProvider>
     </BrowserRouter>
-   
   </React.StrictMode>
 );
 

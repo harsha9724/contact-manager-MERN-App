@@ -4,8 +4,11 @@ import './Header.css';
 import Search from "../../Images/search.png"
 import SideBar from "../SideBar/SideBar"
 import TableNav from "../TableNav/TableNav";
-
+import { context } from "../ContextApi/context"
+import { useContext } from 'react';
 const Header = () => {
+const {email}=useContext(context);
+const user=localStorage.getItem("email")
     return (
         <div className='main-container'>
             <div className='sideBar'>
@@ -26,7 +29,7 @@ const Header = () => {
                         </div>
                         <div className='user-details'>
                             <p style={{ fontSize: "20px", color: "blue" }}>
-                                User
+                                {user}
                             </p>
                             <p className='user-type'>
                                 Super Admin

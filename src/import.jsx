@@ -1,13 +1,11 @@
 import React, { useState,useContext } from "react";
 import { context } from "./Components/ContextApi/context";
 const ImportFile = () => {
-
   const [csvFile, setCsvFile] = useState({});
-  // const [contacts,setContacts]=useState([])
-const {postContacts}=useContext(context);
-// console.log(contacts,setContacts)
+  const [contacts,setContacts]=useState([])
+const { postContacts }=useContext(context);
+
   const processCSV = (str, delim = ",") => {
-    // console.log(str);
     const headers = str.slice(0, str.indexOf("\n")).trim().split(delim);
     const rows = str.slice(str.indexOf("\n") + 1).split("\n");
     const Array = rows.map((row) => {
@@ -19,22 +17,22 @@ const {postContacts}=useContext(context);
       return eachObj;
     });
     Array.pop();
-    // console.log(Array);
     return Array;
   };
 
   const submitData = (e) => {
     e.preventDefault();
     const file = csvFile;
+    console.log(file)
     const reader = new FileReader();
     reader.readAsText(file);
     reader.onload = function (e) {
       const text = e.target.result;
       const data = processCSV(text);
       console.log(data)
-      // setContacts([...contacts,data])
-      // console.log(contacts)
-      postContacts(data)
+      setContacts([...contacts,data])
+      console.log(contacts)
+      // postContacts(data)
     }
   }
 
