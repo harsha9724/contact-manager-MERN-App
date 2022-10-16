@@ -97,7 +97,7 @@ export const ContextProvider = (props) => {
       })
       .catch((err) => console.log(err));
   };
-  // *************serching fuction ***************
+  // *************serching function ***************
   const myFunction = () => {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("myInput");
