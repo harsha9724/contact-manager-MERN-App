@@ -3,8 +3,10 @@ import "./SideBar.css"
 import Dashboard from "../../Images/Dashboard.png"
 import address from "../../Images/address-book.png"
 import logout from "../../Images/logout.svg"
+import { useNavigate } from "react-router-dom";
 
 const SideBar = () => {
+    const navigate=useNavigate()
     return (
         <main>
             <div className="side-bar">
@@ -35,7 +37,11 @@ const SideBar = () => {
 
                 <div className="logout-container">
                     <img src={logout} alt="logout" />
-                    <p>Log Out</p>
+                    <p onClick={()=>{
+                        localStorage.removeItem("token");
+                        navigate("/")
+                        document.location.reload();
+                    }}>Log Out</p>
                 </div>
             </div>
 

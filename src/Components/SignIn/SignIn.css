@@ -116,3 +116,17 @@ body {
 .signIn-button-2 button:hover{
     color: blue;
 }
+
+
+@media only screen and (max-width:1280px) {
+    .signIn-container{
+        background-image:none !important ;
+        background-color: #F2FCFF;
+        max-width: 80%;
+        margin: auto;
+        height: fit-content;
+        box-sizing: border-box;
+       
+    }
+
+  }

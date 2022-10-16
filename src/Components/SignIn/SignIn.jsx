@@ -16,13 +16,13 @@ const SignIn = ()=>{
     const [passwordtype,setPasswordtype]=useState("password");
 
    const handleEyeClick=()=>{
-    setEyeClick(!eyeClick)
+    setEyeClick(false)
    if(eyeClick){
     setPasswordtype("text")
    }
    else{
     setPasswordtype("password")
-    setEyeClick(!eyeClick)
+    setEyeClick(true)
    }
     
    }
@@ -83,7 +83,7 @@ const SignIn = ()=>{
        onChange={handleChange}
        />
            {
-            (eyeClick)? <AiFillEyeInvisible className="eye" onClick={handleEyeClick}/> : <AiFillEye className="eye" onClick={handleEyeClick}/>
+            (eyeClick)? <AiFillEye className="eye" onClick={handleEyeClick}/>  :<AiFillEyeInvisible className="eye" onClick={handleEyeClick}/> 
            }
        </div>
        <p style={{color:"red"}}>{errors.password}</p>

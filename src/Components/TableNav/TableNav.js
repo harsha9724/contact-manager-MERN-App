@@ -16,7 +16,7 @@ import "./TableNav.css"
 import Table from "../Table/Table";
 
 const TableNav = () => {
-  const { postContacts, fetchContacts ,fetchContactsperPage} = useContext(context);
+  const { postContacts, fetchContacts ,checkedArr,deleteContacts} = useContext(context);
   const [click, setClick] = useState(false);
   const [delclick, setDelClick] = useState(false);
   const [highlighted, setHighlighted] = useState(false);
@@ -26,6 +26,14 @@ const TableNav = () => {
     // fetchContacts()
     // fetchContactsperPage()
   }
+  const deletebtnClicked = async () => {
+    console.log(checkedArr)
+    const UserIds = checkedArr;
+    UserIds.map(async (id) => {
+      return await deleteContacts(id);
+    });
+    fetchContacts();
+  };
 
   return (
     <>
@@ -92,7 +100,7 @@ const TableNav = () => {
                       className="popupbtn"
                       onClick={() => {
                         setIsDelComplete(true);
-                        // function to delete is to be added here;
+                        deletebtnClicked();
                       }}
                     >
                       Ok
@@ -133,6 +141,7 @@ const TableNav = () => {
                     // setContact((pre) => [...pre, ...result.data]);
                     postContacts(result.data)
                     setIsComplete(true);
+                    document.location.reload();
                   });
               }}
             >
