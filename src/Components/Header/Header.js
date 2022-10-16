@@ -7,7 +7,7 @@ import TableNav from "../TableNav/TableNav";
 import { context } from "../ContextApi/context"
 import { useContext } from 'react';
 const Header = () => {
-const {email}=useContext(context);
+const {email,myFunction}=useContext(context);
 const user=localStorage.getItem("email").split("@")[0].toUpperCase()
     return (
         <div className='main-container'>
@@ -21,6 +21,9 @@ const user=localStorage.getItem("email").split("@")[0].toUpperCase()
                         <img src={Search} alt="" width="20px" />
                         <input type="search"
                             placeholder='Search by Email-Id....'
+                            id='myInput'
+                            onKeyUp={()=>myFunction()}
+
                         />
                     </div>
                     <div className='user-container'>

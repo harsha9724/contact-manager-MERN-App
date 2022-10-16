@@ -6,8 +6,8 @@ export const context = createContext();
 
 export const ContextProvider = (props) => {
   const [email, setEmail] = useState("")
-  const [contacts, setContacts] = useState([])
-
+  const [contacts, setContacts] = useState([]);
+  const[checkedArr,setCheckedArr]=useState([])
   const navigate = useNavigate();
 
   // ***************posting signin details**************
@@ -88,6 +88,36 @@ export const ContextProvider = (props) => {
     }
   };
 
+  // *************deleting contacts*********
+  const deleteContacts = (id) => {
+    axios
+      .delete(`http://localhost:5000/delete/${id}`, config)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  };
+  // *************serching fuction ***************
+  const myFunction = () => {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[4];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  };
+
+
 
   return (
     <context.Provider
@@ -98,7 +128,11 @@ export const ContextProvider = (props) => {
           signUpUser,
           signInUser,
           email,
-          fetchContacts
+          fetchContacts,
+          deleteContacts,
+          checkedArr,
+          setCheckedArr,
+          myFunction
         }
       }>
       {props.children}
