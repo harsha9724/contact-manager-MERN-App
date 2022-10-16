@@ -55,21 +55,22 @@
 }
 
 .search input {
-    background: #F2F2F2;
+    background: white;
     border-radius: 6px;
     width: 400px;
-    height: 35px;
+    height: 50px;
     border: 1px solid gray;
     padding: 0.5em;
+    padding-left: 50px;
 }
 
 .search input:focus {
     outline: none !important;
-    border: 1px solid blue;
+    border: 1px solid #0a89e4f0;
 }
 
 .search input::placeholder {
-    padding-left: 50px;
+    padding-left: 0;
     opacity: 0.7;
 }
 
@@ -79,12 +80,12 @@
 
 .search img {
     position: absolute;
-    left: 10px;
-    top: 7px;
+    left: 15px;
+    top: 15px;
 }
 
 .tableNav-container {
     margin-top: 20px;
     margin-left: 20px;
-    height: ;
+
 }

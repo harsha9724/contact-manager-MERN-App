@@ -16,16 +16,15 @@ import "./TableNav.css"
 import Table from "../Table/Table";
 
 const TableNav = () => {
-  const { postContacts, fetchContacts } = useContext(context);
+  const { postContacts, fetchContacts ,fetchContactsperPage} = useContext(context);
   const [click, setClick] = useState(false);
   const [delclick, setDelClick] = useState(false);
   const [highlighted, setHighlighted] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
   const [isDelComplete, setIsDelComplete] = useState(false);
-  const [contact, setContact] = useState([]);
-  const [drop, setdrop] = useState(false);
   if (isComplete) {
-    fetchContacts()
+    // fetchContacts()
+    // fetchContactsperPage()
   }
 
   return (

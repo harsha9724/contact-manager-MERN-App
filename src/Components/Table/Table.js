@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useContext } from 'react'
 import { context } from '../ContextApi/context'
 import Edit from "../../Images/Edit-Pen.png"
@@ -7,8 +7,20 @@ import "./Table.css"
 import ReactTooltip from "react-tooltip";
 
 const Table = () => {
-    const { contacts } = useContext(context)
-    console.log(contacts);
+    const { contacts } = useContext(context);
+    const [pageNo, setPageNo] = useState(1)
+    let limit = 2;
+    let pages = Math.ceil(contacts.length / limit);
+    let pagesArray = new Array(pages).fill(0);
+    const start = (pageNo - 1) * limit;
+    const end = pageNo * limit;
+    const contactperpage = contacts.slice(start, end);
+    const left = "<"
+    const right = ">"
+    const handlepageClick = (e) => {
+        console.log((e.target.value));
+        setPageNo(parseInt(e.target.value))
+    }
 
     return (
         <div>
@@ -25,7 +37,7 @@ const Table = () => {
                     <th scope="col">Action</th>
                 </thead>
                 <tbody className='table-body'>
-                    {contacts.map((item) => {
+                    {contactperpage.map((item) => {
                         if (item.name !== "") {
                             return (
                                 <tr>
@@ -51,6 +63,31 @@ const Table = () => {
                     })}
                 </tbody>
             </table>
+
+            <div className='page-no'>
+                {(pageNo > pages) ? null : <button onClick={() => 
+                {
+                    if(pageNo>1){
+                        setPageNo(pageNo - 1)
+                    }
+                }
+                    }> {left} </button>}
+
+                {
+                    pagesArray.map((item, i) => {
+                        return (<button value={i + 1} onClick={handlepageClick}>{i + 1}</button>)
+                    })
+                }
+                {(pageNo > pages ) ? null : <button onClick={() => {
+                    if (pageNo !== pages) {
+                        setPageNo(pageNo + 1)
+                    }
+                }
+                }> {right} </button>}
+            </div>
+
+
+
         </div>
     )
 }

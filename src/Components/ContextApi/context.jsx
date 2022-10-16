@@ -53,7 +53,7 @@ export const ContextProvider = (props) => {
       })
 
   };
-  //   fetching the contacts;
+    // fetching the contacts;
   const fetchContacts = () => {
     axios
       .get("http://localhost:5000/alldata", config)

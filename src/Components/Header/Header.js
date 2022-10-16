@@ -8,7 +8,7 @@ import { context } from "../ContextApi/context"
 import { useContext } from 'react';
 const Header = () => {
 const {email}=useContext(context);
-const user=localStorage.getItem("email")
+const user=localStorage.getItem("email").split("@")[0].toUpperCase()
     return (
         <div className='main-container'>
             <div className='sideBar'>
@@ -28,7 +28,7 @@ const user=localStorage.getItem("email")
                             <img src={UserImg} alt="user" />
                         </div>
                         <div className='user-details'>
-                            <p style={{ fontSize: "20px", color: "blue" }}>
+                            <p style={{ fontSize: "20px", color: "#0a89e4f0"}}>
                                 {user}
                             </p>
                             <p className='user-type'>
