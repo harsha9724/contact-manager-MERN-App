@@ -4,8 +4,7 @@ import './index.css';
 // import App from './App';
 
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Route,  Navigate } from "react-router-dom"
-import ImportFile from './import';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import SignIn from './Components/SignIn/SignIn';
 import Signup from './Components/SignUp/SignUp';
 import Header from "./Components/Header/Header"
@@ -14,7 +13,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 const token = localStorage.getItem("token");
 
 root.render(
-  
+
   <React.StrictMode>
     <BrowserRouter>
       <ContextProvider>
@@ -23,7 +22,6 @@ root.render(
           <Route path='/register' element={<Signup />} />
           <Route path='/contacts' element={
             token ? (<Header />) : (<Navigate replace to={"/"} />)} />
-          <Route path='/import' element={<ImportFile />} />
         </Routes>
       </ContextProvider>
     </BrowserRouter>

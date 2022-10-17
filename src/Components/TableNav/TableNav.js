@@ -16,7 +16,7 @@ import "./TableNav.css"
 import Table from "../Table/Table";
 
 const TableNav = () => {
-  const { postContacts, fetchContacts ,checkedArr,deleteContacts} = useContext(context);
+  const { postContacts, fetchContacts, checkedArr, deleteContacts } = useContext(context);
   const [click, setClick] = useState(false);
   const [delclick, setDelClick] = useState(false);
   const [highlighted, setHighlighted] = useState(false);

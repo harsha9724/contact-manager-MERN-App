@@ -7,7 +7,7 @@ export const context = createContext();
 export const ContextProvider = (props) => {
   const [email, setEmail] = useState("")
   const [contacts, setContacts] = useState([]);
-  const[checkedArr,setCheckedArr]=useState([])
+  const [checkedArr, setCheckedArr] = useState([])
   const navigate = useNavigate();
 
   // ***************posting signin details**************
@@ -53,7 +53,7 @@ export const ContextProvider = (props) => {
       })
 
   };
-    // fetching the contacts;
+  // fetching the contacts;
   const fetchContacts = () => {
     axios
       .get("http://localhost:5000/alldata", config)

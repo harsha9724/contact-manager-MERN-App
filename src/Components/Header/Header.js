@@ -7,8 +7,8 @@ import TableNav from "../TableNav/TableNav";
 import { context } from "../ContextApi/context"
 import { useContext } from 'react';
 const Header = () => {
-const {email,myFunction}=useContext(context);
-const user=localStorage.getItem("email").split("@")[0].toUpperCase()
+    const { email, myFunction } = useContext(context);
+    const user = localStorage.getItem("email").split("@")[0].toUpperCase()
     return (
         <div className='main-container'>
             <div className='sideBar'>
@@ -22,7 +22,7 @@ const user=localStorage.getItem("email").split("@")[0].toUpperCase()
                         <input type="search"
                             placeholder='Search by Email-Id....'
                             id='myInput'
-                            onKeyUp={()=>myFunction()}
+                            onKeyUp={() => myFunction()}
 
                         />
                     </div>
@@ -31,7 +31,7 @@ const user=localStorage.getItem("email").split("@")[0].toUpperCase()
                             <img src={UserImg} alt="user" />
                         </div>
                         <div className='user-details'>
-                            <p style={{ fontSize: "20px", color: "#0a89e4f0"}}>
+                            <p style={{ fontSize: "20px", color: "#0a89e4f0" }}>
                                 {user}
                             </p>
                             <p className='user-type'>

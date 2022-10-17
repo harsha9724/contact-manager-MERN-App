@@ -54,10 +54,11 @@ input[type="checkbox"] {
     left: 2.5px;
     top: 12px;
 }
-.page-no{
+
+.page-no {
     position: fixed;
-    top:90%;
-    right:2%;
+    top: 90%;
+    right: 2%;
     display: flex;
     justify-content: flex-end;
     align-content: flex-end;
@@ -66,14 +67,15 @@ input[type="checkbox"] {
     /* border: 1px solid blue;
     background-color: #B2DFFF; */
 }
-.page-no button{
+
+.page-no button {
     font-size: 25px;
     cursor: pointer;
     margin-right: 20px;
     height: 100%;
-    width:50px;
-    background-color:white ;
+    width: 50px;
+    background-color: white;
     outline: none;
-    border:none;
+    border: none;
 
 }

@@ -6,7 +6,7 @@ import logout from "../../Images/logout.svg"
 import { useNavigate } from "react-router-dom";
 
 const SideBar = () => {
-    const navigate=useNavigate()
+    const navigate = useNavigate()
     return (
         <main>
             <div className="side-bar">
@@ -37,7 +37,7 @@ const SideBar = () => {
 
                 <div className="logout-container">
                     <img src={logout} alt="logout" />
-                    <p onClick={()=>{
+                    <p onClick={() => {
                         localStorage.removeItem("token");
                         navigate("/")
                         document.location.reload();
