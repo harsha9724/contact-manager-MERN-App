@@ -21,9 +21,9 @@ thead {
 }
 
 td {
-    font-size: 18px;
+    font-size: 15px;
     font-family: Titillium Web;
-    height: 50px;
+    height: 40px;
     text-align: center;
 }
 
@@ -67,7 +67,7 @@ input[type="checkbox"] {
     background-color: #B2DFFF; */
 }
 .page-no button{
-    font-size: 25px;
+    font-size: 20px;
     cursor: pointer;
     margin-right: 20px;
     height: 100%;

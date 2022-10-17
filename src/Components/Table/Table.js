@@ -10,7 +10,7 @@ import "rc-tooltip/assets/bootstrap.css";
 const Table = () => {
     const { contacts,setCheckedArr,deleteContacts } = useContext(context);
     const [pageNo, setPageNo] = useState(1);
-    let limit = 10;
+    let limit = 6;
     let pages = Math.ceil(contacts.length / limit);
     let pagesArray = new Array(pages).fill(0);
     const start = (pageNo - 1) * limit;
