@@ -82,6 +82,7 @@ const SignIn = ()=>{
        placeholder="Password"
        onChange={handleChange}
        />
+     
            {
             (eyeClick)? <AiFillEye className="eye" onClick={handleEyeClick}/>  :<AiFillEyeInvisible className="eye" onClick={handleEyeClick}/> 
            }

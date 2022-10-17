@@ -23,7 +23,6 @@ root.render(
           <Route path='/register' element={<Signup />} />
           <Route path='/contacts' element={
             token ? (<Header />) : (<Navigate replace to={"/"} />)} />
-          <Route path='/import' element={<ImportFile />} />
         </Routes>
       </ContextProvider>
     </BrowserRouter>

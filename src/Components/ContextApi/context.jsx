@@ -15,7 +15,7 @@ export const ContextProvider = (props) => {
   const signInUser = (loginData) => {
     console.log(loginData);
     axios
-      .post("http://localhost:5000/login", loginData)
+      .post("https://contact-manager-server.herokuapp.com/login", loginData)
       .then((res) => {
         const myToken = res.data.token;
         console.log(myToken);
@@ -43,20 +43,18 @@ export const ContextProvider = (props) => {
   };
 
   const postContacts = async (ContactsData) => {
-
     return await axios
-      .post("http://localhost:5000/add", ContactsData, config)
+      .post("https://contact-manager-server.herokuapp.com/add", ContactsData, config)
       .then((res) => console.log(res))
       .catch((err) => {
         console.log(err.response.data.message)
         // console.log(err)
       })
-
   };
     // fetching the contacts;
   const fetchContacts = () => {
     axios
-      .get("http://localhost:5000/alldata", config)
+      .get("https://contact-manager-server.herokuapp.com/alldata", config)
       .then((res) => {
         console.log(res.data[0].contact);
         // const data = res.data.message[0].Contacts;
@@ -74,7 +72,7 @@ export const ContextProvider = (props) => {
     console.log(userData);
     try {
       axios
-        .post("http://localhost:5000/register", userData)
+        .post("https://contact-manager-server.herokuapp.com/register", userData)
         .then((res) => {
           console.log(res);
           navigate("/");
@@ -91,7 +89,7 @@ export const ContextProvider = (props) => {
   // *************deleting contacts*********
   const deleteContacts = (id) => {
     axios
-      .delete(`http://localhost:5000/delete/${id}`, config)
+      .delete(`https://contact-manager-server.herokuapp.com/delete/${id}`, config)
       .then((res) => {
         console.log(res);
       })
