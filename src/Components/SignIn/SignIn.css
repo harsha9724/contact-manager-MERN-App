@@ -5,6 +5,8 @@
 body {
     height: 100%;
     width: 100%;
+    margin: 0%;
+    padding: 0%;
   }
 .signIn-container {
     display: flex;
@@ -19,7 +21,7 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     width:100%;
-    height:100%;
+    height:80%;
     background-size: 80%;
     padding-top: 5%;
     padding-bottom:300px ;
